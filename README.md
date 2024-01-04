@@ -13,3 +13,6 @@ The project showcases a robust real-time data pipeline integrating Confluent Kaf
 * Confluent Kafka Python Client
 * MySQL Database
 * Apache Avro File Format
+
+# KAFKA UI
+<img width="912" alt="KAFKAUI" src="https://github.com/KRISHNASAIRAJ/Avro-Encoded-Real-Time-Data-Processing/assets/90061814/cd16e59c-9abe-4827-adb0-9a1db2e0d458">
