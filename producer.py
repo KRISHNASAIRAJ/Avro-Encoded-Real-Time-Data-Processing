@@ -36,35 +36,35 @@ def delivery_report(err, msg):#It reports the delivery status of the data to kaf
 
 
 kafka_config = {
-    "bootstrap.servers": "********************",#The kafka cloud bootstrapserver
+    "bootstrap.servers": "pkc-4r087.us-west2.gcp.confluent.cloud:9092",#The host url of kafka server(cloud)
     "sasl.mechanisms": "PLAIN",#SASL mechanisms for authentication
     "security.protocol": "SASL_SSL",#Security Protocol
-    "sasl.username": "************",#SASL USERNAME(API)
-    "sasl.password": "********************************",#SASL PASSWORD(API)
+    "sasl.username": "SQIODPYLDQYOGBI6",#SASL USERNAME(API)
+    "sasl.password": "PE7oqEnZJmfLlOv4GmsAROOKJv4yLbawFOu7ShoJgt1xkYP/dIOKgX9FB3gUls8R",#SASL PASSWORD(API)
 }
 # Create a Schema Registry client which manages the updated schema
 schema_registry_client = SchemaRegistryClient(
     {
-        "url": "https://psrc-5j7x8.us-central1.gcp.confluent.cloud",#The schema registry url
+        "url": "https://psrc-5j7x8.us-central1.gcp.confluent.cloud",#The host url of schema registry
         "basic.auth.user.info": "{}:{}".format(
-            "*********",#Schema Registry key
-            "*********************************************",#Schema registry value/secret
+            "2PTX5PP5K2ZK2KGL",#Schema Registry API key
+            "3g3RrACXhg2uMG91o411u5LsLHNeMH2A8SoAsH4pmYzRoATvAJo7ORQwRtee0J7+",#Schema registry API value/secret
         ),
     }
 )
 
 # Fetch the latest Avro schema for the value
 subject_name = "product_updates-value"  # topic_name+(-value)
-schema_str = schema_registry_client.get_latest_version(subject_name).schema.schema_str#It gives the latest updated schema version
+schema_str = schema_registry_client.get_latest_version(subject_name).schema.schema_str#It gives the latest updated schema version as string(actual one in ui)
 
 # Create Avro Serializer for the value
 key_serializer = StringSerializer("utf_8") # Serializer for keys, encoded as strings
 avro_serializer = AvroSerializer(schema_registry_client, schema_str)# Serializer for Avro schema
 
-# Define the SerializingProducer
+# Define the SerializingProducer object which publishes data
 producer = SerializingProducer(
     {
-        "bootstrap.servers": kafka_config["bootstrap.servers"],# Kafka bootstrap servers
+        "bootstrap.servers": kafka_config["bootstrap.servers"],# Kafka host server url
         "security.protocol": kafka_config["security.protocol"],# Security protocol configuration
         "sasl.mechanisms": kafka_config["sasl.mechanisms"],#SASL mechanisms for authentication
         "sasl.username": kafka_config["sasl.username"],#SASL USERNAME(API)
@@ -77,7 +77,7 @@ producer = SerializingProducer(
 mysql_config = {
     "host": "localhost",
     "user": "root",
-    "password": "root",
+    "password": "ford@PK2S1R0",
     "database": "buy_online",
 }
 
