@@ -19,7 +19,7 @@ The project showcases a robust real-time data pipeline integrating Confluent Kaf
 
 ## Producer Output&emsp;Consumer Group(5) Output
 <div style="display:flex; justify-content: center;">
-    <img width="200" height="187" alt="Producer Output" src="https://github.com/KRISHNASAIRAJ/Avro-Encoded-Real-Time-Data-Processing/assets/90061814/69511796-4dfc-450b-8972-8eb8831f4c80">
+    <img width="200" height="120" alt="Producer Output" src="https://github.com/KRISHNASAIRAJ/Avro-Encoded-Real-Time-Data-Processing/assets/90061814/69511796-4dfc-450b-8972-8eb8831f4c80">
     <img width="500" alt="Consumer Group Output" src="https://github.com/KRISHNASAIRAJ/Avro-Encoded-Real-Time-Data-Processing/assets/90061814/7db55cd9-9224-4595-bb8a-03768219aaa3">
 </div>
 
